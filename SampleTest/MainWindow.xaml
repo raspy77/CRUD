@@ -1,0 +1,46 @@
+﻿<Window x:Class="SampleTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <DataGrid x:Name="SampleTest" AutoGenerateColumns="False" KeyDown="SampleTest_KeyDown" SelectionChanged="SampleTest_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Grade"  Width="*" Binding="{Binding Grade}"/>
+                    <DataGridTextColumn Header="Cclass" Width="*" Binding="{Binding Cclass}"/>
+                    <DataGridTextColumn Header="No"     Width="*" Binding="{Binding No}"/>
+                    <DataGridTextColumn Header="Name"   Width="*" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Score"  Width="*" Binding="{Binding Score}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="1" Name="BtnRead" Click="BtnRead_Click">Read</Button>
+            <Button Grid.Row="3" Name="BtnCreate" Click="BtnCreate_Click">Create</Button>
+            <Button Grid.Row="5" Name="BtnUpdate" Click="BtnUpdate_Click">Update</Button>
+            <Button Grid.Row="7" Name="BtnRemove" Click="BtnRemove_Click">Remove</Button>
+        </Grid>
+    </Grid>
+</Window>
